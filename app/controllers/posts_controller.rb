@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       @post.save 
       redirect_to post_path(@post)
     else 
-      render :new 
+      render :edit
     end 
     end 
 
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
+ 
     @post.update(post_params)
 
     redirect_to post_path(@post)
